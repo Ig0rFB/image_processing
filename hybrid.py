@@ -68,5 +68,3 @@ def create_hybrid_image(image1, image2, size, sigma):
 hybrid = create_hybrid_image(image1, image2, size=15, sigma=7)
 
 cv2.imwrite('hybrid_image.jpg', cv2.cvtColor(hybrid, cv2.COLOR_RGB2BGR))
-
-test
