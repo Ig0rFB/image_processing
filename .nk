@@ -1,0 +1,71 @@
+#! /Applications/Nuke15.0v4/Nuke15.0v4.app/Contents/MacOS/libnuke-15.0.4.dylib -nx
+version 15.0 v4
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="1728" y="-246" w="3008" h="1639" maximized="1" screen="1">
+        <splitter orientation="1">
+            <split size="1903"/>
+            <splitter orientation="1">
+                <split size="1903"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                </dock>
+            </splitter>
+            <split size="1101"/>
+            <splitter orientation="2">
+                <split size="1083"/>
+                <dock id="" activePageId="Properties.1" focus="true">
+                    <page id="Properties.1"/>
+                    <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                </dock>
+                <split size="536"/>
+                <dock id="" hideTitles="1" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /Users/igor/image_processing/.nk
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+ workingSpaceLUT linear
+ monitorLut sRGB
+ monitorOutLUT rec709
+ int8Lut sRGB
+ int16Lut sRGB
+ logLut Cineon
+ floatLut linear
+}
+Read {
+ inputs 0
+ file_type tiff
+ file "/Users/igor/_ARRI/Reference Images/alexa-mini-lf-awg3-logc3-data.tiff"
+ format "4448 3096 0 0 4448 3096 1 "
+ origset true
+ colorspace AlexaV3LogC
+ name Read1
+ xpos -204
+ ypos -295
+}
+Expression {
+ expr0 x
+ name Expression1
+ selected true
+ xpos -204
+ ypos -103
+}
+Viewer {
+ frame 1
+ frame_range 1-100
+ monitorOutNDISenderName "Nuke - untitled - Viewer1"
+ monitorOutOutputTransform rec709
+ name Viewer1
+ xpos 47
+ ypos -103
+}
